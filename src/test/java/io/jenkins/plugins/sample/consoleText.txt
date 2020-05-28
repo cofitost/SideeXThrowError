@@ -1,0 +1,98 @@
+Started by user Wei Ren
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/m0720881_SideeX
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+using credential gitlab_root
+Cloning the remote Git repository
+Cloning repository http://140.134.26.76:27777/m0720881/SideeX.git
+ > git init /var/jenkins_home/workspace/m0720881_SideeX # timeout=10
+Fetching upstream changes from http://140.134.26.76:27777/m0720881/SideeX.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress -- http://140.134.26.76:27777/m0720881/SideeX.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://140.134.26.76:27777/m0720881/SideeX.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://140.134.26.76:27777/m0720881/SideeX.git # timeout=10
+Fetching upstream changes from http://140.134.26.76:27777/m0720881/SideeX.git
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress -- http://140.134.26.76:27777/m0720881/SideeX.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision aea6e9582e938f2c931fb21b6834b7e72c309054 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f aea6e9582e938f2c931fb21b6834b7e72c309054 # timeout=10
+Commit message: ""Instructor&nbsp;Commit""
+ > git rev-list --no-walk aea6e9582e938f2c931fb21b6834b7e72c309054 # timeout=10
+Find: m0720881_SideeX/src/web/html/sec.html
+Find: m0720881_SideeX/src/web/html/index.html
+save the screenshot png in target/screenshot/
+ checksum in zip does not equals to checksum in setting
+filePath : /var/jenkins_home/tests/SideeX/README.md
+filePath : /var/jenkins_home/tests/SideeX/.stylelintrc.json
+filePath : /var/jenkins_home/tests/SideeX/src/test/testSuite.json
+filePath : /var/jenkins_home/tests/SideeX/src/test/settings.json
+filePath : /var/jenkins_home/tests/SideeX/src/test/preprocess.js
+filePath : /var/jenkins_home/tests/SideeX/src/test/sideex-runner.js
+filePath : /var/jenkins_home/tests/SideeX/src/server.js
+filePath : /var/jenkins_home/tests/SideeX/package.json
+filePath : /var/jenkins_home/tests/SideeX/.gitignore
+filePath : /var/jenkins_home/tests/SideeX/.eslintrc.js
+[m0720881_SideeX] $ /bin/sh -xe /tmp/jenkins4775316263148427304.sh
++ npm run test-suite
+
+> node_sample@1.0.0 test-suite /var/jenkins_home/workspace/m0720881_SideeX
+> cd src/test && node preprocess.js && node sideex-runner.js -c settings.json
+
+file:///var/lib/workspace/m0720881_SideeX/src/web/html/index.html
+INFO SideeX Version: 3.3.6
+(node:3725) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+INFO Checking test suite Untitled Test Suite
+INFO Checking test case Untitled Test Suite.Untitled Test Case
+INFO Preprocessing Done
+INFO Playing test suite Untitled Test Suite
+INFO Playing test case Untitled Test Case
+INFO Executing: | open | file:///var/lib/workspace/m0720881_SideeX/src/web/html/index.html |  |
+INFO Executing: | clickAt | name=username | 390,16 |
+INFO Executing: | sendKeys | name=username | root |
+INFO Executing: | clickAt | name=password | 170,19 |
+INFO Executing: | sendKeys | name=password | root |
+INFO Executing: | clickAt | name=continue |  |
+INFO echo: The echo for test
+INFO Executing: | TRY |  |  |
+INFO Executing: | assertText | id=title | Hello World! |
+INFO Executing: | CATCH |  |  |
+INFO Executing: | echo | The value in "id=title" should be "Hello World!" |  |
+INFO echo: The value in "id=title" should be "Hello World!"
+INFO Executing: | END |  |  |
+INFO Executing: | TRY |  |  |
+INFO Executing: | assertText | id=title | Hello World! |
+INFO Executing: | CATCH |  |  |
+INFO Executing: | echo | The value for test |  |
+INFO echo: The value for test
+INFO Executing: | END |  |  |
+INFO Executing: | TRY |  |  |
+INFO Executing: | assertTitle | HelloWorld |  |
+INFO Executing: | END |  |  |
+INFO Executing: | assertTitle | Hello World |  |
+ERROR Actual value 'HelloWorld' did not match 'Hello World'
+ERROR Test case failed
+SideeX Runner finished.
+Archiving artifacts
+--------------------------UpdateDbPublisher--------------------------------
+progeduDbUrl : http://140.134.26.76:28818/webapi/commits/update
+user : m0720881
+proName : SideeX
+
+Sending 'POST' request to URL : http://140.134.26.76:28818/webapi/commits/update
+Post parameters : user=m0720881&proName=SideeX
+Response Code : 200
+WEB return value is : {"commitNumber":2,"auId":6,"time":"java.text.SimpleDateFormat@9a0ab3ed","status":"bs"}
+
+--------------------------UpdateDbPublisher--------------------------------
+-----------------------UpdateScreenshotPNGToDB-----------------------------
+Response Code : 200
+WEB return value is : {"commitCount":2,"proName":"SideeX","url":["index.html","sec.html"],"username":"m0720881"}
+
+-----------------------UpdateScreenshotPNGToDB-----------------------------
+Finished: SUCCESS
