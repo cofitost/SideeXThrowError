@@ -40,10 +40,6 @@ public class ErrorCatchBuilder extends Builder implements SimpleBuildStep {
         try {
           URL url = new URL(consoleUrl);
           conn = (HttpURLConnection) url.openConnection();
-          String input = "root" + ":" + "selab245";
-          Base64.Encoder encoder = Base64.getEncoder();
-          String encoding = "Basic " + encoder.encodeToString(input.getBytes());
-          conn.setRequestProperty("Authorization", encoding);
           conn.setReadTimeout(10000);
           conn.setConnectTimeout(15000);
           conn.setRequestMethod("GET");
