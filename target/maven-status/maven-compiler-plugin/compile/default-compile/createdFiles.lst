@@ -1,6 +1,0 @@
-META-INF\annotations\org.jenkinsci.Symbol
-META-INF\annotations\hudson.Extension.txt
-io\jenkins\plugins\sample\ErrorCatchBuilder.class
-io\jenkins\plugins\sample\ErrorCatchBuilder.stapler
-io\jenkins\plugins\sample\ErrorCatchBuilder$DescriptorImpl.class
-META-INF\annotations\hudson.Extension
