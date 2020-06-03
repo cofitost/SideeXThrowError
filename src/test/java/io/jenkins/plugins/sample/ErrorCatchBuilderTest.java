@@ -33,7 +33,7 @@ public class ErrorCatchBuilderTest {
     //   for(String s : main.getErrorResult(main.Builder("consoleText.txt"))){
     //     System.out.println(s);
     //   }
-    ErrorCatchBuilder errorCatchBuilder = new ErrorCatchBuilder("jenkinsIp");
+    ErrorCatchBuilder errorCatchBuilder = new ErrorCatchBuilder("jenkinsIp", "projectName", "username");
     String s = errorCatchBuilder.getSideeXConsoleText();
     for(String s2 : errorCatchBuilder.getCatchResult(s)) {
         System.out.println(s2);

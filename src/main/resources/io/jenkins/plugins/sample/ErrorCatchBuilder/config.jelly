@@ -3,4 +3,10 @@
     <f:entry title="${%jenkinsIp}" field="jenkinsIp">
         <f:textbox />
     </f:entry>
+    <f:entry title="${%projectName}" field="projectName">
+        <f:textbox />
+    </f:entry>
+    <f:entry title="${%username}" field="username">
+        <f:textbox />
+    </f:entry>
 </j:jelly>

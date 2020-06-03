@@ -25,15 +25,19 @@ import org.kohsuke.stapler.DataBoundSetter;
 public class ErrorCatchBuilder extends Builder implements SimpleBuildStep {
 
     private final String jenkinsIp;
+    private final String projectName;
+    private final String username;
 
     @DataBoundConstructor
-    public ErrorCatchBuilder(String jenkinsIp) {
+    public ErrorCatchBuilder(String jenkinsIp, String projectName, String username) {
         this.jenkinsIp = jenkinsIp;
+        this.projectName = projectName;
+        this.username = username;
     }
 
     public String getSideeXConsoleText() {
-        // curl http://140.134.26.76:38200/job/W1/lastBuild/consoleText | Select-Object -Expand Content
-        String consoleUrl = "http://140.134.26.76:28888/job/m0720881_SideeX/lastBuild/consoleText";
+        // curl http://jenkinsIp/job/username_projectName/lastBuild/consoleText | Select-Object -Expand Content
+        String consoleUrl = jenkinsIp + "/job/" + username + "_" + projectName + "/lastBuild/consoleText";
         HttpURLConnection conn = null;
         StringBuilder contentBuilder = new StringBuilder();
 
